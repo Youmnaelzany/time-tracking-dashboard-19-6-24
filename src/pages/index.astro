@@ -5,16 +5,19 @@ import data from '../components/data/data.json';
 ---
 
 <Layout title='Time tracking dashboard.'>
-  <main class='mx-6 my-[5.06rem] md:mx-[10.31rem] md:my-[15.81rem]'>
+  <main
+    class='mx-6 my-[5.06rem] grid grid-cols-1 gap-6 md:mx-[10.31rem] md:my-[15.81rem] md:grid-cols-4 md:gap-[1.88rem]'
+  >
+    <!-- The Report -->
     <section
-      class='h-[12.6875rem] w-[20.4375rem] rounded-t-[0.9375rem] bg-[#1C204B] md:h-[32.375rem] md:w-[15.9375rem]'
+      class='row-span-3 h-[12.6875rem] w-[20.4375rem] rounded-[0.9375rem] bg-[#1C204B] md:h-[32.375rem] md:w-[15.9375rem]'
     >
       <div
         class='flex h-[8.3125rem] items-center justify-center gap-6 rounded-[0.9375rem] bg-[#5747EA] px-8 pb-[2.12rem] pt-[2.19rem] md:h-[22.125rem] md:flex-col md:items-start md:gap-8'
       >
         <div class=''>
           <img
-            src='/public/images/image-jeremy.png'
+            src='/images/image-jeremy.png'
             alt=''
             class='size-16 rounded-full border-[3px] border-solid border-white'
           />
@@ -33,24 +36,534 @@ import data from '../components/data/data.json';
         </div>
       </div>
       <div
-        class='flex h-[4.37rem] items-center justify-center gap-[1.31rem] px-8 py-6 md:h-[10.25rem] md:flex-col md:items-start'
+        class='flex h-[4.37rem] items-center justify-between gap-10 px-8 py-6 md:h-[10.25rem] md:flex-col md:items-start md:gap-[1.31rem]'
       >
         <button
           type='button'
           class='cursor-pointer text-lg font-normal leading-normal text-[#7078C9] focus:text-[white]'
-          id=''>Daily</button
+          id='dailyBtn'>Daily</button
         >
         <button
           type='button'
           class='cursor-pointer text-lg font-normal leading-normal text-[#7078C9] focus:text-[white]'
-          id=''>Weekly</button
+          id='weeklyBtn'>Weekly</button
         >
         <button
           type='button'
           class='cursor-pointer text-lg font-normal leading-normal text-[#7078C9] focus:text-[white]'
-          id=''>Monthly</button
+          id='monthlyBtn'>Monthly</button
         >
+      </div>
+    </section>
+    <!-- Work -->
+    <section
+      class='h-40 w-[20.4375rem] cursor-pointer rounded-[0.9375rem] bg-[#1C204B] duration-300 ease-in hover:bg-[#33397A] md:h-[15.2475rem] md:w-[15.9375rem]'
+    >
+      <div
+        class='relative z-40 h-[2.37rem] overflow-hidden rounded-t-[0.9375rem] bg-[#FF8B64] md:h-[2.81rem]'
+      >
+        <img
+          src='/images/icon-work.svg'
+          alt=''
+          class='absolute -top-4 right-4'
+        />
+      </div>
+      <div
+        class='relative z-50 flex h-[7.625rem] flex-col items-start justify-between gap-[0.44rem] px-6 py-7 md:w-[12.4375rem]'
+      >
+        <!-- Work Tittle -->
+        <div
+          class='flex items-center justify-between gap-[13.44rem] md:gap-[9.19rem]'
+        >
+          <h2 class='text-lg font-normal leading-normal text-white'>
+            {data.map((i) => i.title)[0]}
+          </h2>
+          <img src='/public/images/icon-ellipsis.svg' alt='ellipsis' class='' />
+        </div>
+        <!--  Work Daily -->
+        <div class='dailyBox'>
+          <div
+            class='flex items-baseline gap-[5.7rem] md:flex-col md:items-start md:gap-0'
+          >
+            <h2
+              class='text-[2rem] font-semibold leading-normal text-white md:text-[3.5rem]'
+            >
+              {data.map((i) => i.timeframes.daily.current)[0]}hrs
+            </h2>
+            <h3
+              class='text-[0.9375rem] font-normal leading-normal text-[#BBC0FF]'
+            >
+              Yesterday - {data.map((i) => i.timeframes.daily.previous)[0]}hrs
+            </h3>
+          </div>
+        </div>
+        <!-- Work Weekly -->
+        <div class='weeklyBox hidden'>
+          <div
+            class='flex items-baseline gap-[5.7rem] md:flex-col md:items-start md:gap-0'
+          >
+            <h2
+              class='text-[2rem] font-semibold leading-normal text-white md:text-[3.5rem]'
+            >
+              {data.map((i) => i.timeframes.weekly.current)[0]}hrs
+            </h2>
+            <h3
+              class='text-[0.9375rem] font-normal leading-normal text-[#BBC0FF]'
+            >
+              Last Week - {data.map((i) => i.timeframes.weekly.previous)[0]}hrs
+            </h3>
+          </div>
+        </div>
+        <!-- Work Monthly -->
+        <div class='monthlyBox hidden'>
+          <div
+            class='flex items-baseline gap-[5.7rem] md:flex-col md:items-start md:gap-0'
+          >
+            <h2
+              class='text-[2rem] font-semibold leading-normal text-white md:text-[3.5rem]'
+            >
+              {data.map((i) => i.timeframes.monthly.current)[0]}hrs
+            </h2>
+            <h3
+              class='text-[0.9375rem] font-normal leading-normal text-[#BBC0FF]'
+            >
+              Last Month - {
+                data.map((i) => i.timeframes.monthly.previous)[0]
+              }hrs
+            </h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Play -->
+    <section
+      class='h-40 w-[20.4375rem] cursor-pointer rounded-[0.9375rem] bg-[#1C204B] duration-300 ease-in hover:bg-[#33397A] md:h-[15.2475rem] md:w-[15.9375rem]'
+    >
+      <div
+        class='relative z-40 h-[2.37rem] overflow-hidden rounded-t-[0.9375rem] bg-[#55C2E6] md:h-[2.81rem]'
+      >
+        <img
+          src='/public/images/icon-play.svg'
+          alt=''
+          class='absolute -top-4 right-4'
+        />
+      </div>
+      <div
+        class='relative z-50 flex h-[7.625rem] flex-col items-start justify-between gap-[0.44rem] px-6 py-7 md:w-[12.4375rem]'
+      >
+        <!-- Play Tittle -->
+        <div
+          class='flex items-center justify-between gap-[13.44rem] md:gap-[9.19rem]'
+        >
+          <h2 class='text-lg font-normal leading-normal text-white'>
+            {data.map((i) => i.title)[1]}
+          </h2>
+          <img src='/public/images/icon-ellipsis.svg' alt='ellipsis' class='' />
+        </div>
+        <!--  Play Daily -->
+        <div class='dailyBox'>
+          <div
+            class='flex items-baseline gap-[5.7rem] md:flex-col md:items-start md:gap-0'
+          >
+            <h2
+              class='text-[2rem] font-semibold leading-normal text-white md:text-[3.5rem]'
+            >
+              {data.map((i) => i.timeframes.daily.current)[1]}hrs
+            </h2>
+            <h3
+              class='text-[0.9375rem] font-normal leading-normal text-[#BBC0FF]'
+            >
+              Yesterday - {data.map((i) => i.timeframes.daily.previous)[1]}hrs
+            </h3>
+          </div>
+        </div>
+        <!-- Play Weekly -->
+        <div class='weeklyBox hidden'>
+          <div
+            class='flex items-baseline gap-[5.7rem] md:flex-col md:items-start md:gap-0'
+          >
+            <h2
+              class='text-[2rem] font-semibold leading-normal text-white md:text-[3.5rem]'
+            >
+              {data.map((i) => i.timeframes.weekly.current)[1]}hrs
+            </h2>
+            <h3
+              class='text-[0.9375rem] font-normal leading-normal text-[#BBC0FF]'
+            >
+              Last Week - {data.map((i) => i.timeframes.weekly.previous)[1]}hrs
+            </h3>
+          </div>
+        </div>
+        <!-- Play Monthly -->
+        <div class='monthlyBox hidden'>
+          <div
+            class='flex items-baseline gap-[5.7rem] md:flex-col md:items-start md:gap-0'
+          >
+            <h2
+              class='text-[2rem] font-semibold leading-normal text-white md:text-[3.5rem]'
+            >
+              {data.map((i) => i.timeframes.monthly.current)[1]}hrs
+            </h2>
+            <h3
+              class='text-[0.9375rem] font-normal leading-normal text-[#BBC0FF]'
+            >
+              Last Month - {
+                data.map((i) => i.timeframes.monthly.previous)[1]
+              }hrs
+            </h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Study -->
+    <section
+      class='h-40 w-[20.4375rem] cursor-pointer rounded-[0.9375rem] bg-[#1C204B] duration-300 ease-in hover:bg-[#33397A] md:h-[15.2475rem] md:w-[15.9375rem]'
+    >
+      <div
+        class='relative z-40 h-[2.37rem] overflow-hidden rounded-t-[0.9375rem] bg-[#FF5E7D] md:h-[2.81rem]'
+      >
+        <img
+          src='/public/images/icon-study.svg'
+          alt=''
+          class='absolute -top-4 right-4'
+        />
+      </div>
+      <div
+        class='relative z-50 flex h-[7.625rem] flex-col items-start justify-between gap-[0.44rem] px-6 py-7 md:w-[12.4375rem]'
+      >
+        <!-- Study Tittle -->
+        <div
+          class='flex items-center justify-between gap-[13.44rem] md:gap-[9.19rem]'
+        >
+          <h2 class='text-lg font-normal leading-normal text-white'>
+            {data.map((i) => i.title)[2]}
+          </h2>
+          <img src='/public/images/icon-ellipsis.svg' alt='ellipsis' class='' />
+        </div>
+        <!--  Study Daily -->
+        <div class='dailyBox'>
+          <div
+            class='flex items-baseline gap-[5.7rem] md:flex-col md:items-start md:gap-0'
+          >
+            <h2
+              class='text-[2rem] font-semibold leading-normal text-white md:text-[3.5rem]'
+            >
+              {data.map((i) => i.timeframes.daily.current)[2]}hrs
+            </h2>
+            <h3
+              class='text-[0.9375rem] font-normal leading-normal text-[#BBC0FF]'
+            >
+              Yesterday - {data.map((i) => i.timeframes.daily.previous)[2]}hrs
+            </h3>
+          </div>
+        </div>
+        <!-- Study Weekly -->
+        <div class='weeklyBox hidden'>
+          <div
+            class='flex items-baseline gap-[5.7rem] md:flex-col md:items-start md:gap-0'
+          >
+            <h2
+              class='text-[2rem] font-semibold leading-normal text-white md:text-[3.5rem]'
+            >
+              {data.map((i) => i.timeframes.weekly.current)[2]}hrs
+            </h2>
+            <h3
+              class='text-[0.9375rem] font-normal leading-normal text-[#BBC0FF]'
+            >
+              Last Week - {data.map((i) => i.timeframes.weekly.previous)[2]}hrs
+            </h3>
+          </div>
+        </div>
+        <!-- Study Monthly -->
+        <div class='monthlyBox hidden'>
+          <div
+            class='flex items-baseline gap-[5.7rem] md:flex-col md:items-start md:gap-0'
+          >
+            <h2
+              class='text-[2rem] font-semibold leading-normal text-white md:text-[3.5rem]'
+            >
+              {data.map((i) => i.timeframes.monthly.current)[2]}hrs
+            </h2>
+            <h3
+              class='text-[0.9375rem] font-normal leading-normal text-[#BBC0FF]'
+            >
+              Last Month - {
+                data.map((i) => i.timeframes.monthly.previous)[2]
+              }hrs
+            </h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Exercise -->
+    <section
+      class='h-40 w-[20.4375rem] cursor-pointer rounded-[0.9375rem] bg-[#1C204B] duration-300 ease-in hover:bg-[#33397A] md:h-[15.2475rem] md:w-[15.9375rem]'
+    >
+      <div
+        class='relative z-40 h-[2.37rem] overflow-hidden rounded-t-[0.9375rem] bg-[#4BCF82] md:h-[2.81rem]'
+      >
+        <img
+          src='/public/images/icon-exercise.svg'
+          alt=''
+          class='absolute -top-4 right-4'
+        />
+      </div>
+      <div
+        class='relative z-50 flex h-[7.625rem] flex-col items-start justify-between gap-[0.44rem] px-6 py-7 md:w-[12.4375rem]'
+      >
+        <!-- Exercise Tittle -->
+        <div
+          class='flex items-center justify-between gap-[13.44rem] md:gap-[9.19rem]'
+        >
+          <h2 class='text-lg font-normal leading-normal text-white'>
+            {data.map((i) => i.title)[3]}
+          </h2>
+          <img src='/public/images/icon-ellipsis.svg' alt='ellipsis' class='' />
+        </div>
+        <!--  Exercise Daily -->
+        <div class='dailyBox'>
+          <div
+            class='flex items-baseline gap-[5.7rem] md:flex-col md:items-start md:gap-0'
+          >
+            <h2
+              class='text-[2rem] font-semibold leading-normal text-white md:text-[3.5rem]'
+            >
+              {data.map((i) => i.timeframes.daily.current)[3]}hrs
+            </h2>
+            <h3
+              class='text-[0.9375rem] font-normal leading-normal text-[#BBC0FF]'
+            >
+              Yesterday - {data.map((i) => i.timeframes.daily.previous)[3]}hrs
+            </h3>
+          </div>
+        </div>
+        <!-- Exercise Weekly -->
+        <div class='weeklyBox hidden'>
+          <div
+            class='flex items-baseline gap-[5.7rem] md:flex-col md:items-start md:gap-0'
+          >
+            <h2
+              class='text-[2rem] font-semibold leading-normal text-white md:text-[3.5rem]'
+            >
+              {data.map((i) => i.timeframes.weekly.current)[3]}hrs
+            </h2>
+            <h3
+              class='text-[0.9375rem] font-normal leading-normal text-[#BBC0FF]'
+            >
+              Last Week - {data.map((i) => i.timeframes.weekly.previous)[3]}hrs
+            </h3>
+          </div>
+        </div>
+        <!-- Exercise Monthly -->
+        <div class='monthlyBox hidden'>
+          <div
+            class='flex items-baseline gap-[5.7rem] md:flex-col md:items-start md:gap-0'
+          >
+            <h2
+              class='text-[2rem] font-semibold leading-normal text-white md:text-[3.5rem]'
+            >
+              {data.map((i) => i.timeframes.monthly.current)[3]}hrs
+            </h2>
+            <h3
+              class='text-[0.9375rem] font-normal leading-normal text-[#BBC0FF]'
+            >
+              Last Month - {
+                data.map((i) => i.timeframes.monthly.previous)[3]
+              }hrs
+            </h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Social -->
+    <section
+      class='h-40 w-[20.4375rem] cursor-pointer rounded-[0.9375rem] bg-[#1C204B] duration-300 ease-in hover:bg-[#33397A] md:h-[15.2475rem] md:w-[15.9375rem]'
+    >
+      <div
+        class='relative z-40 h-[2.37rem] overflow-hidden rounded-t-[0.9375rem] bg-[#7335D2] md:h-[2.81rem]'
+      >
+        <img
+          src='/public/images/icon-socail.svg'
+          alt=''
+          class='absolute -top-4 right-4'
+        />
+      </div>
+      <div
+        class='relative z-50 flex h-[7.625rem] flex-col items-start justify-between gap-[0.44rem] px-6 py-7 md:w-[12.4375rem]'
+      >
+        <!-- Social Tittle -->
+        <div
+          class='flex items-center justify-between gap-[13.44rem] md:gap-[9.19rem]'
+        >
+          <h2 class='text-lg font-normal leading-normal text-white'>
+            {data.map((i) => i.title)[4]}
+          </h2>
+          <img src='/public/images/icon-ellipsis.svg' alt='ellipsis' class='' />
+        </div>
+        <!--  Social Daily -->
+        <div class='dailyBox'>
+          <div
+            class='flex items-baseline gap-[5.7rem] md:flex-col md:items-start md:gap-0'
+          >
+            <h2
+              class='text-[2rem] font-semibold leading-normal text-white md:text-[3.5rem]'
+            >
+              {data.map((i) => i.timeframes.daily.current)[4]}hrs
+            </h2>
+            <h3
+              class='text-[0.9375rem] font-normal leading-normal text-[#BBC0FF]'
+            >
+              Yesterday - {data.map((i) => i.timeframes.daily.previous)[4]}hrs
+            </h3>
+          </div>
+        </div>
+        <!-- Social Weekly -->
+        <div class='weeklyBox hidden'>
+          <div
+            class='flex items-baseline gap-[5.7rem] md:flex-col md:items-start md:gap-0'
+          >
+            <h2
+              class='text-[2rem] font-semibold leading-normal text-white md:text-[3.5rem]'
+            >
+              {data.map((i) => i.timeframes.weekly.current)[4]}hrs
+            </h2>
+            <h3
+              class='text-[0.9375rem] font-normal leading-normal text-[#BBC0FF]'
+            >
+              Last Week - {data.map((i) => i.timeframes.weekly.previous)[4]}hrs
+            </h3>
+          </div>
+        </div>
+        <!-- Social Monthly -->
+        <div class='monthlyBox hidden'>
+          <div
+            class='flex items-baseline gap-[5.7rem] md:flex-col md:items-start md:gap-0'
+          >
+            <h2
+              class='text-[2rem] font-semibold leading-normal text-white md:text-[3.5rem]'
+            >
+              {data.map((i) => i.timeframes.monthly.current)[4]}hrs
+            </h2>
+            <h3
+              class='text-[0.9375rem] font-normal leading-normal text-[#BBC0FF]'
+            >
+              Last Month - {
+                data.map((i) => i.timeframes.monthly.previous)[4]
+              }hrs
+            </h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SelfCare -->
+    <section
+      class='h-40 w-[20.4375rem] cursor-pointer rounded-[0.9375rem] bg-[#1C204B] duration-300 ease-in hover:bg-[#33397A] md:h-[15.2475rem] md:w-[15.9375rem]'
+    >
+      <div
+        class='relative z-40 h-[2.37rem] overflow-hidden rounded-t-[0.9375rem] bg-[#F1C75B] md:h-[2.81rem]'
+      >
+        <img
+          src='/public/images/icon-self-care.svg'
+          alt=''
+          class='absolute -top-4 right-4'
+        />
+      </div>
+      <div
+        class='relative z-50 flex h-[7.625rem] flex-col items-start justify-between gap-[0.44rem] px-6 py-7 md:w-[12.4375rem]'
+      >
+        <!-- SelfCare Tittle -->
+        <div class='flex items-center justify-between'>
+          <h2 class='text-lg font-normal leading-normal text-white'>
+            {data.map((i) => i.title)[5]}
+          </h2>
+          <img
+            src='/public/images/icon-ellipsis.svg'
+            alt='ellipsis'
+            class='justify-self-end'
+          />
+        </div>
+        <!--  SelfCare Daily -->
+        <div class='dailyBox'>
+          <div
+            class='flex items-baseline gap-[5.7rem] md:flex-col md:items-start md:gap-0'
+          >
+            <h2
+              class='text-[2rem] font-semibold leading-normal text-white md:text-[3.5rem]'
+            >
+              {data.map((i) => i.timeframes.daily.current)[5]}hrs
+            </h2>
+            <h3
+              class='text-[0.9375rem] font-normal leading-normal text-[#BBC0FF]'
+            >
+              Yesterday - {data.map((i) => i.timeframes.daily.previous)[5]}hrs
+            </h3>
+          </div>
+        </div>
+        <!-- SelfCare Weekly -->
+        <div class='weeklyBox hidden'>
+          <div
+            class='flex items-baseline gap-[5.7rem] md:flex-col md:items-start md:gap-0'
+          >
+            <h2
+              class='text-[2rem] font-semibold leading-normal text-white md:text-[3.5rem]'
+            >
+              {data.map((i) => i.timeframes.weekly.current)[5]}hrs
+            </h2>
+            <h3
+              class='text-[0.9375rem] font-normal leading-normal text-[#BBC0FF]'
+            >
+              Last Week - {data.map((i) => i.timeframes.weekly.previous)[5]}hrs
+            </h3>
+          </div>
+        </div>
+        <!-- SelfCare Monthly -->
+        <div class='monthlyBox hidden'>
+          <div
+            class='flex items-baseline gap-[5.7rem] md:flex-col md:items-start md:gap-0'
+          >
+            <h2
+              class='text-[2rem] font-semibold leading-normal text-white md:text-[3.5rem]'
+            >
+              {data.map((i) => i.timeframes.monthly.current)[5]}hrs
+            </h2>
+            <h3
+              class='text-[0.9375rem] font-normal leading-normal text-[#BBC0FF]'
+            >
+              Last Month - {
+                data.map((i) => i.timeframes.monthly.previous)[5]
+              }hrs
+            </h3>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 </Layout>
+
+<script is:inline>
+  const dailyBtn = document.getElementById('dailyBtn');
+  const weeklyBtn = document.getElementById('weeklyBtn');
+  const monthlyBtn = document.getElementById('monthlyBtn');
+
+  const dailyBoxes = document.querySelectorAll('.dailyBox');
+  const weeklyBoxes = document.querySelectorAll('.weeklyBox');
+  const monthlyBoxes = document.querySelectorAll('.monthlyBox');
+
+  dailyBtn.addEventListener('click', () => {
+    dailyBoxes.forEach((box) => box.classList.toggle('hidden'));
+    weeklyBoxes.forEach((box) => box.classList.add('hidden'));
+    monthlyBoxes.forEach((box) => box.classList.add('hidden'));
+  });
+
+  weeklyBtn.addEventListener('click', () => {
+    weeklyBoxes.forEach((box) => box.classList.toggle('hidden'));
+    dailyBoxes.forEach((box) => box.classList.add('hidden'));
+    monthlyBoxes.forEach((box) => box.classList.add('hidden'));
+  });
+
+  monthlyBtn.addEventListener('click', () => {
+    monthlyBoxes.forEach((box) => box.classList.toggle('hidden'));
+    dailyBoxes.forEach((box) => box.classList.add('hidden'));
+    weeklyBoxes.forEach((box) => box.classList.add('hidden'));
+  });
+</script>
