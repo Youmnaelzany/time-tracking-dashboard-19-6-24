@@ -1,0 +1,56 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '@/styles/globals.css';
+import data from '../components/data/data.json';
+---
+
+<Layout title='Time tracking dashboard.'>
+  <main class='mx-6 my-[5.06rem] md:mx-[10.31rem] md:my-[15.81rem]'>
+    <section
+      class='h-[12.6875rem] w-[20.4375rem] rounded-t-[0.9375rem] bg-[#1C204B] md:h-[32.375rem] md:w-[15.9375rem]'
+    >
+      <div
+        class='flex h-[8.3125rem] items-center justify-center gap-6 rounded-[0.9375rem] bg-[#5747EA] px-8 pb-[2.12rem] pt-[2.19rem] md:h-[22.125rem] md:flex-col md:items-start md:gap-8'
+      >
+        <div class=''>
+          <img
+            src='/public/images/image-jeremy.png'
+            alt=''
+            class='size-16 rounded-full border-[3px] border-solid border-white'
+          />
+        </div>
+        <div class=''>
+          <h3
+            class='text-[0.9375rem] font-normal leading-normal text-[#BBC0FF]'
+          >
+            Report for
+          </h3>
+          <h4
+            class='text-2xl font-normal leading-normal text-white md:text-[2.5rem]'
+          >
+            Jeremy Robson
+          </h4>
+        </div>
+      </div>
+      <div
+        class='flex h-[4.37rem] items-center justify-center gap-[1.31rem] px-8 py-6 md:h-[10.25rem] md:flex-col md:items-start'
+      >
+        <button
+          type='button'
+          class='cursor-pointer text-lg font-normal leading-normal text-[#7078C9] focus:text-[white]'
+          id=''>Daily</button
+        >
+        <button
+          type='button'
+          class='cursor-pointer text-lg font-normal leading-normal text-[#7078C9] focus:text-[white]'
+          id=''>Weekly</button
+        >
+        <button
+          type='button'
+          class='cursor-pointer text-lg font-normal leading-normal text-[#7078C9] focus:text-[white]'
+          id=''>Monthly</button
+        >
+      </div>
+    </section>
+  </main>
+</Layout>
