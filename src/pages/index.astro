@@ -40,17 +40,18 @@ import data from '../components/data/data.json';
       >
         <button
           type='button'
-          class='cursor-pointer text-lg font-normal leading-normal text-[#7078C9] focus:text-[white]'
+          class='cursor-pointer text-lg font-normal leading-normal text-[#7078C9] hover:text-white focus:text-white'
           id='dailyBtn'>Daily</button
         >
+
         <button
           type='button'
-          class='cursor-pointer text-lg font-normal leading-normal text-[#7078C9] focus:text-[white]'
+          class='cursor-pointer text-lg font-normal leading-normal text-[#7078C9] hover:text-white focus:text-white'
           id='weeklyBtn'>Weekly</button
         >
         <button
           type='button'
-          class='cursor-pointer text-lg font-normal leading-normal text-[#7078C9] focus:text-[white]'
+          class='cursor-pointer text-lg font-normal leading-normal text-[#7078C9] hover:text-white focus:text-white'
           id='monthlyBtn'>Monthly</button
         >
       </div>
@@ -73,12 +74,16 @@ import data from '../components/data/data.json';
       >
         <!-- Work Tittle -->
         <div
-          class='flex items-center justify-between gap-[13.44rem] md:gap-[9.19rem]'
+          class='flex items-center justify-between gap-[13.44rem] md:gap-[8.19rem]'
         >
           <h2 class='text-lg font-normal leading-normal text-white'>
             {data.map((i) => i.title)[0]}
           </h2>
-          <img src='/public/images/icon-ellipsis.svg' alt='ellipsis' class='' />
+          <img
+            src='/images/icon-ellipsis.svg'
+            alt='ellipsis'
+            class='cursor-pointer'
+          />
         </div>
         <!--  Work Daily -->
         <div class='dailyBox'>
@@ -100,7 +105,7 @@ import data from '../components/data/data.json';
         <!-- Work Weekly -->
         <div class='weeklyBox hidden'>
           <div
-            class='flex items-baseline gap-[5.7rem] md:flex-col md:items-start md:gap-0'
+            class='flex items-baseline gap-[3.5rem] md:flex-col md:items-start md:gap-0'
           >
             <h2
               class='text-[2rem] font-semibold leading-normal text-white md:text-[3.5rem]'
@@ -117,7 +122,7 @@ import data from '../components/data/data.json';
         <!-- Work Monthly -->
         <div class='monthlyBox hidden'>
           <div
-            class='flex items-baseline gap-[5.7rem] md:flex-col md:items-start md:gap-0'
+            class='flex items-baseline gap-[1.8rem] md:flex-col md:items-start md:gap-0'
           >
             <h2
               class='text-[2rem] font-semibold leading-normal text-white md:text-[3.5rem]'
@@ -143,7 +148,7 @@ import data from '../components/data/data.json';
         class='relative z-40 h-[2.37rem] overflow-hidden rounded-t-[0.9375rem] bg-[#55C2E6] md:h-[2.81rem]'
       >
         <img
-          src='/public/images/icon-play.svg'
+          src='/images/icon-play.svg'
           alt=''
           class='absolute -top-4 right-4'
         />
@@ -153,12 +158,16 @@ import data from '../components/data/data.json';
       >
         <!-- Play Tittle -->
         <div
-          class='flex items-center justify-between gap-[13.44rem] md:gap-[9.19rem]'
+          class='flex items-center justify-between gap-[13.75rem] md:gap-[8.15rem]'
         >
           <h2 class='text-lg font-normal leading-normal text-white'>
             {data.map((i) => i.title)[1]}
           </h2>
-          <img src='/public/images/icon-ellipsis.svg' alt='ellipsis' class='' />
+          <img
+            src='/images/icon-ellipsis.svg'
+            alt='ellipsis'
+            class='cursor-pointer'
+          />
         </div>
         <!--  Play Daily -->
         <div class='dailyBox'>
@@ -180,7 +189,7 @@ import data from '../components/data/data.json';
         <!-- Play Weekly -->
         <div class='weeklyBox hidden'>
           <div
-            class='flex items-baseline gap-[5.7rem] md:flex-col md:items-start md:gap-0'
+            class='flex items-baseline gap-[4.5rem] md:flex-col md:items-start md:gap-0'
           >
             <h2
               class='text-[2rem] font-semibold leading-normal text-white md:text-[3.5rem]'
@@ -197,7 +206,7 @@ import data from '../components/data/data.json';
         <!-- Play Monthly -->
         <div class='monthlyBox hidden'>
           <div
-            class='flex items-baseline gap-[5.7rem] md:flex-col md:items-start md:gap-0'
+            class='flex items-baseline gap-[3.3rem] md:flex-col md:items-start md:gap-0'
           >
             <h2
               class='text-[2rem] font-semibold leading-normal text-white md:text-[3.5rem]'
@@ -223,7 +232,7 @@ import data from '../components/data/data.json';
         class='relative z-40 h-[2.37rem] overflow-hidden rounded-t-[0.9375rem] bg-[#FF5E7D] md:h-[2.81rem]'
       >
         <img
-          src='/public/images/icon-study.svg'
+          src='/images/icon-study.svg'
           alt=''
           class='absolute -top-4 right-4'
         />
@@ -233,12 +242,16 @@ import data from '../components/data/data.json';
       >
         <!-- Study Tittle -->
         <div
-          class='flex items-center justify-between gap-[13.44rem] md:gap-[9.19rem]'
+          class='flex items-center justify-between gap-[12.81rem] md:gap-[7.56rem]'
         >
           <h2 class='text-lg font-normal leading-normal text-white'>
             {data.map((i) => i.title)[2]}
           </h2>
-          <img src='/public/images/icon-ellipsis.svg' alt='ellipsis' class='' />
+          <img
+            src='/images/icon-ellipsis.svg'
+            alt='ellipsis'
+            class='cursor-pointer'
+          />
         </div>
         <!--  Study Daily -->
         <div class='dailyBox'>
@@ -260,7 +273,7 @@ import data from '../components/data/data.json';
         <!-- Study Weekly -->
         <div class='weeklyBox hidden'>
           <div
-            class='flex items-baseline gap-[5.7rem] md:flex-col md:items-start md:gap-0'
+            class='flex items-baseline gap-[5rem] md:flex-col md:items-start md:gap-0'
           >
             <h2
               class='text-[2rem] font-semibold leading-normal text-white md:text-[3.5rem]'
@@ -277,7 +290,7 @@ import data from '../components/data/data.json';
         <!-- Study Monthly -->
         <div class='monthlyBox hidden'>
           <div
-            class='flex items-baseline gap-[5.7rem] md:flex-col md:items-start md:gap-0'
+            class='flex items-baseline gap-[3.5rem] md:flex-col md:items-start md:gap-0'
           >
             <h2
               class='text-[2rem] font-semibold leading-normal text-white md:text-[3.5rem]'
@@ -303,7 +316,7 @@ import data from '../components/data/data.json';
         class='relative z-40 h-[2.37rem] overflow-hidden rounded-t-[0.9375rem] bg-[#4BCF82] md:h-[2.81rem]'
       >
         <img
-          src='/public/images/icon-exercise.svg'
+          src='/images/icon-exercise.svg'
           alt=''
           class='absolute -top-4 right-4'
         />
@@ -313,12 +326,16 @@ import data from '../components/data/data.json';
       >
         <!-- Exercise Tittle -->
         <div
-          class='flex items-center justify-between gap-[13.44rem] md:gap-[9.19rem]'
+          class='flex items-center justify-between gap-[11.5rem] md:gap-[6.25rem]'
         >
           <h2 class='text-lg font-normal leading-normal text-white'>
             {data.map((i) => i.title)[3]}
           </h2>
-          <img src='/public/images/icon-ellipsis.svg' alt='ellipsis' class='' />
+          <img
+            src='/images/icon-ellipsis.svg'
+            alt='ellipsis'
+            class='cursor-pointer'
+          />
         </div>
         <!--  Exercise Daily -->
         <div class='dailyBox'>
@@ -340,7 +357,7 @@ import data from '../components/data/data.json';
         <!-- Exercise Weekly -->
         <div class='weeklyBox hidden'>
           <div
-            class='flex items-baseline gap-[5.7rem] md:flex-col md:items-start md:gap-0'
+            class='flex items-baseline gap-[5rem] md:flex-col md:items-start md:gap-0'
           >
             <h2
               class='text-[2rem] font-semibold leading-normal text-white md:text-[3.5rem]'
@@ -357,7 +374,7 @@ import data from '../components/data/data.json';
         <!-- Exercise Monthly -->
         <div class='monthlyBox hidden'>
           <div
-            class='flex items-baseline gap-[5.7rem] md:flex-col md:items-start md:gap-0'
+            class='flex items-baseline gap-[3.5rem] md:flex-col md:items-start md:gap-0'
           >
             <h2
               class='text-[2rem] font-semibold leading-normal text-white md:text-[3.5rem]'
@@ -380,10 +397,10 @@ import data from '../components/data/data.json';
       class='h-40 w-[20.4375rem] cursor-pointer rounded-[0.9375rem] bg-[#1C204B] duration-300 ease-in hover:bg-[#33397A] md:h-[15.2475rem] md:w-[15.9375rem]'
     >
       <div
-        class='relative z-40 h-[2.37rem] overflow-hidden rounded-t-[0.9375rem] bg-[#7335D2] md:h-[2.81rem]'
+        class='relative z-40 h-[2.37rem] overflow-hidden rounded-t-[0.9375rem] bg-[#7335d2] md:h-[2.81rem]'
       >
         <img
-          src='/public/images/icon-socail.svg'
+          src='/images/icon-social.svg'
           alt=''
           class='absolute -top-4 right-4'
         />
@@ -393,12 +410,16 @@ import data from '../components/data/data.json';
       >
         <!-- Social Tittle -->
         <div
-          class='flex items-center justify-between gap-[13.44rem] md:gap-[9.19rem]'
+          class='flex items-center justify-between gap-[12.81rem] md:gap-[7.56rem]'
         >
           <h2 class='text-lg font-normal leading-normal text-white'>
             {data.map((i) => i.title)[4]}
           </h2>
-          <img src='/public/images/icon-ellipsis.svg' alt='ellipsis' class='' />
+          <img
+            src='/images/icon-ellipsis.svg'
+            alt='ellipsis'
+            class='cursor-pointer'
+          />
         </div>
         <!--  Social Daily -->
         <div class='dailyBox'>
@@ -420,7 +441,7 @@ import data from '../components/data/data.json';
         <!-- Social Weekly -->
         <div class='weeklyBox hidden'>
           <div
-            class='flex items-baseline gap-[5.7rem] md:flex-col md:items-start md:gap-0'
+            class='flex items-baseline gap-[5rem] md:flex-col md:items-start md:gap-0'
           >
             <h2
               class='text-[2rem] font-semibold leading-normal text-white md:text-[3.5rem]'
@@ -437,7 +458,7 @@ import data from '../components/data/data.json';
         <!-- Social Monthly -->
         <div class='monthlyBox hidden'>
           <div
-            class='flex items-baseline gap-[5.7rem] md:flex-col md:items-start md:gap-0'
+            class='flex items-baseline gap-[3.5rem] md:flex-col md:items-start md:gap-0'
           >
             <h2
               class='text-[2rem] font-semibold leading-normal text-white md:text-[3.5rem]'
@@ -463,23 +484,25 @@ import data from '../components/data/data.json';
         class='relative z-40 h-[2.37rem] overflow-hidden rounded-t-[0.9375rem] bg-[#F1C75B] md:h-[2.81rem]'
       >
         <img
-          src='/public/images/icon-self-care.svg'
+          src='/images/icon-self-care.svg'
           alt=''
           class='absolute -top-4 right-4'
         />
       </div>
       <div
-        class='relative z-50 flex h-[7.625rem] flex-col items-start justify-between gap-[0.44rem] px-6 py-7 md:w-[12.4375rem]'
+        class='relative z-50 flex h-[7.625rem] flex-col items-start justify-between gap-[0.44rem] px-6 py-7'
       >
         <!-- SelfCare Tittle -->
-        <div class='flex items-center justify-between'>
+        <div
+          class='flex items-center justify-between gap-[11.19rem] md:gap-[6rem]'
+        >
           <h2 class='text-lg font-normal leading-normal text-white'>
             {data.map((i) => i.title)[5]}
           </h2>
           <img
-            src='/public/images/icon-ellipsis.svg'
+            src='/images/icon-ellipsis.svg'
             alt='ellipsis'
-            class='justify-self-end'
+            class='cursor-pointer'
           />
         </div>
         <!--  SelfCare Daily -->
@@ -502,7 +525,7 @@ import data from '../components/data/data.json';
         <!-- SelfCare Weekly -->
         <div class='weeklyBox hidden'>
           <div
-            class='flex items-baseline gap-[5.7rem] md:flex-col md:items-start md:gap-0'
+            class='flex items-baseline gap-[5.5rem] md:flex-col md:items-start md:gap-0'
           >
             <h2
               class='text-[2rem] font-semibold leading-normal text-white md:text-[3.5rem]'
@@ -519,7 +542,7 @@ import data from '../components/data/data.json';
         <!-- SelfCare Monthly -->
         <div class='monthlyBox hidden'>
           <div
-            class='flex items-baseline gap-[5.7rem] md:flex-col md:items-start md:gap-0'
+            class='flex items-baseline gap-[5rem] md:flex-col md:items-start md:gap-0'
           >
             <h2
               class='text-[2rem] font-semibold leading-normal text-white md:text-[3.5rem]'
@@ -549,20 +572,25 @@ import data from '../components/data/data.json';
   const weeklyBoxes = document.querySelectorAll('.weeklyBox');
   const monthlyBoxes = document.querySelectorAll('.monthlyBox');
 
+  // Show weekly boxes by default
+  weeklyBoxes.forEach((box) => box.classList.remove('hidden'));
+  dailyBoxes.forEach((box) => box.classList.add('hidden'));
+  monthlyBoxes.forEach((box) => box.classList.add('hidden'));
+
   dailyBtn.addEventListener('click', () => {
-    dailyBoxes.forEach((box) => box.classList.toggle('hidden'));
+    dailyBoxes.forEach((box) => box.classList.remove('hidden'));
     weeklyBoxes.forEach((box) => box.classList.add('hidden'));
     monthlyBoxes.forEach((box) => box.classList.add('hidden'));
   });
 
   weeklyBtn.addEventListener('click', () => {
-    weeklyBoxes.forEach((box) => box.classList.toggle('hidden'));
+    weeklyBoxes.forEach((box) => box.classList.remove('hidden'));
     dailyBoxes.forEach((box) => box.classList.add('hidden'));
     monthlyBoxes.forEach((box) => box.classList.add('hidden'));
   });
 
   monthlyBtn.addEventListener('click', () => {
-    monthlyBoxes.forEach((box) => box.classList.toggle('hidden'));
+    monthlyBoxes.forEach((box) => box.classList.remove('hidden'));
     dailyBoxes.forEach((box) => box.classList.add('hidden'));
     weeklyBoxes.forEach((box) => box.classList.add('hidden'));
   });
